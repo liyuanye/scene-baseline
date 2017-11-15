@@ -23,8 +23,9 @@ class BasicModule(t.nn.Module):
         # for k,v in checkpoint['opt'].items():
         #     setattr(self.opt,k,v)
 
+# correctiong the path, by lee, 15th Nov
     def save(self, name=''):
-        format = 'checkpoints/'+self.model_name+'_%m%d_%H%M_'
+        format = './checkpoints/'+self.model_name+'_%m%d_%H%M_'
         file_name = time.strftime(format) + str(name)
         
         state_dict = self.state_dict()

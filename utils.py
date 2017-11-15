@@ -12,13 +12,13 @@ class Visualizer():
         self.index = {}
 
     def plot_many(self, d):
-        for k, v in d.iteritems():
+        for k, v in d.items():
             self.plot(k, v)
 
     def plot(self, name, y):
         x = self.index.get(name, 0)
         self.vis.line(Y=np.array([y]), X=np.array([x]),
-                      win=unicode(name),
+                      win=str(name),
                       opts=dict(title=name),
                       update=None if x == 0 else 'append'
                       )
@@ -33,11 +33,12 @@ def topk_acc(score,label,k=3):
     acc = (label == topk).float().sum()/(0.0+label.size(0))
     return acc
 
+# correcting paths, by lee, 15th Nov
 class Config:
-    train_dir = '/data/image/ai_cha/scene/sl/train/'
-    test_dir = '/data/image/ai_cha/scene/sl/testa'
-    val_dir = '/data/image/ai_cha/scene/sl/val'
-    meta_path = '/data/image/ai_cha/scene/sl/scene.pth'
+    train_dir = './data/image/ai_cha/scene/sl/train/'
+    test_dir = './data/image/ai_cha/scene/sl/testa'
+    val_dir = './data/image/ai_cha/scene/sl/val'
+    meta_path = './data/image/ai_cha/scene/sl/scene.pth'
     img_size=256
 
     lr1 = 0
@@ -60,7 +61,7 @@ def parse(self,kwargs,print_=True):
         '''
         根据字典kwargs 更新 config参数
         '''
-        for k,v in kwargs.iteritems():
+        for k,v in kwargs.items():
             if not hasattr(self,k):
                 raise Exception("opt has not attribute <%s>" %k)
             setattr(self,k,v) 
@@ -69,7 +70,7 @@ def parse(self,kwargs,print_=True):
             print('#################################')
             for k in dir(self):
                 if not k.startswith('_') and k!='parse' and k!='state_dict':
-                    print k,getattr(self,k)
+                    print(k,getattr(self,k))
             print('#################################')
         return self
 

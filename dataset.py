@@ -62,4 +62,4 @@ class ClsDataset(data.Dataset):
         return len(self.imgs)
 
 if __name__=='__main__':
-   test 
+   test()

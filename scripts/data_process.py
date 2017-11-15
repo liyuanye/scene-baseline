@@ -1,11 +1,11 @@
 # 数据预处理脚本
 
 
-
-train_ann_file = '/data/image/ai_cha/scene/ai_challenger_scene_train_20170904/scene_train_annotations_20170904.json'
-val_ann_file = '/data/image/ai_cha/scene/ai_challenger_scene_validation_20170908/scene_validation_annotations_20170908.json'
-test_dir = '/data/image/ai_cha/scene/ai_challenger_scene_test_a_20170922/scene_test_a_images_20170922/'
-clas_file = '/data/image/ai_cha/scene/ai_challenger_scene_test_a_20170922/scene_classes.csv'
+# correcting paths
+train_ann_file = './data/image/ai_cha/scene/ai_challenger_scene_train_20170904/scene_train_annotations_20170904.json'
+val_ann_file = './data/image/ai_cha/scene/ai_challenger_scene_validation_20170908/scene_validation_annotations_20170908.json'
+test_dir = './data/image/ai_cha/scene/ai_challenger_scene_test_a_20170922/scene_test_a_images_20170922/'
+clas_file = './data/image/ai_cha/scene/ai_challenger_scene_test_a_20170922/scene_classes.csv'
 
 import pandas as pd
 from collections import namedtuple
